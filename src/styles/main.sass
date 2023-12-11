@@ -1,0 +1,99 @@
+@import mixins
+@import variables
+    
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@100;300;500;700&display=swap')
+
+// Reset and global configurations
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: "Press Start 2P", cursive
+    transition: .7s
+
+// Elements Styles
+// header and menu
+menu
+    background: $primary-color
+    @include display-flex($align-items: center, $justify-content: space-evenly)
+    border-bottom: 5px solid $menu-border-color
+
+    flex-direction: column
+    height: 20vh
+    min-height: 7rem
+
+    @include responsive-display($min-width: 768px)
+        @include display-flex($align-items: center, $justify-content: center)
+        flex-direction: row
+    
+ 
+    & section
+        width: 100%
+        @include display-flex($align-items: center, $justify-content: space-around)
+
+        @include responsive-display($min-width: 768px)
+            @include display-flex($align-items: center, $justify-content: center)
+            flex-direction: column
+                
+        & h2
+            color: $h2-color
+
+        & .number
+            color: $secondary-color
+
+    & .menu-time h2:nth-child(2),
+    .menu-score h2:nth-child(2)
+        margin-top: 1rem
+
+        
+
+    & .menu-life
+        @include responsive-display($min-width: 768px)
+            @include display-flex($align-items: center, $justify-content: center)
+            flex-direction: row
+
+        img
+            width: 3rem
+
+            @include responsive-display(768px)
+                width: 4rem
+            
+
+// main
+
+main
+    @include display-flex($align-items: center, $justify-content: center)
+    flex-direction: column-reverse
+
+    background-image: url("../images/wall.png")
+
+    .panel
+        @include display-flex($align-items: center, $justify-content: center)
+        height: 80vh
+        min-height: 20rem
+
+        & .panel-row .square
+            height: 6rem
+            width: 6rem
+            border: 1px solid black   
+            background: #1aeaa5 
+
+            @include responsive-display(768px)
+                height: 8rem
+                width: 8rem
+
+        & .panel-row .enemy
+            background-image: url("../images/ralph.png")
+            background-size: cover
+
+    .buttons #startButton
+        background: $primary-color
+        color: $menu-border-color
+        margin-top: 1rem
+        padding: .6rem .3rem
+        border: none
+
+        &:hover
+            border-bottom: 2px solid white
+            transition: .2s

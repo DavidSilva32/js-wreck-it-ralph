@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="src/images/favicon.jpg"
+      type="image/x-icon"
+    />
+    <title>Wreck it Ralph</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <menu>
+        <section class="menu-time">
+          <h2>Time Left</h2>
+          <h2 class="number" id="time-left">0</h2>
+        </section>
+        <section class="menu-score">
+          <h2>Your Score</h2>
+          <h2 class="number" id="score">0</h2>
+        </section>
+        <section class="menu-life">
+          <img src="./src/images/player.png" alt="Player Photo" />
+          <h2 class="number" id="life">x3</h2>
+        </section>
+      </menu>
+    </header>
+    <main>
+      <section class="panel" id="panel">
+        <section class="panel-row">
+          <section class="square" id="0"></section>
+          <section class="square" id="1"></section>
+          <section class="square" id="2"></section>
+        </section>
+        <section class="panel-row">
+          <section class="square enemy" id="3"></section>
+          <section class="square" id="4"></section>
+          <section class="square" id="5"></section>
+        </section>
+        <section class="panel-row">
+          <section class="square" id="6"></section>
+          <section class="square" id="7"></section>
+          <section class="square" id="8"></section>
+        </section>
+    </section>
+    <section class="buttons">
+        <button id="startButton" onclick="initialize()">Start</button>
+    </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="src/scripts/engine.js"></script>
+  </body>
+</html>
