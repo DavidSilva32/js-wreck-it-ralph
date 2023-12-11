@@ -29,11 +29,10 @@ const countDown = () => {
 
     stopSound("background");
     playSound("gameover", 1);
-    setTimeout(() =>
-      alert(`Game Over! Your result was: ${state.values.result}`) ,
-      1000
-    );
-    resetGame();
+    setTimeout(() => {
+      alert(`Game Over! Your result was: ${state.values.result}`), 1000;
+      resetGame();
+    });
   }
 };
 
@@ -64,9 +63,9 @@ const playSound = (sound, volume = 0.2) => {
   audio.volume = volume;
   audio.play();
 
-  // Replay background sound
+  // Replay background sound                                                                                                                                                                                                                                                        -
   if (sound === "background") {
-    audio.loop = true 
+    audio.loop = true;
   }
 };
 
@@ -87,7 +86,7 @@ const addListenerHitBox = () => {
         playSound("hit");
       } else {
         // Condition case wrong box
-        playSound("wronghit", 1)
+        playSound("wronghit", 1);
         state.values.lifeTotal--;
         state.view.life.innerHTML = `x${state.values.lifeTotal}`;
       }
