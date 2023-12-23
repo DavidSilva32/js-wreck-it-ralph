@@ -32,22 +32,9 @@ const countDown = () => {
     playSound("gameover", 1);
     setTimeout(() => {
       alert(`Game Over! Your result was: ${state.values.result}`);
-      resetGame();
+      window.location.reload();
     }, 500);
   }
-};
-
-const resetGame = () => {
-  // Reset All Values
-  state.values.gameVelocity = 1000;
-  state.values.currentTime = 60;
-  state.values.hitPosition = 0;
-  state.values.lifeTotal = 3;
-  state.values.result = 0;
-
-  // Update the Values in the Display
-  state.view.score.textContent = state.values.result;
-  state.view.life.innerHTML = `x${state.values.lifeTotal}`;
 };
 
 const randomSquare = () => {
@@ -70,8 +57,8 @@ const increaseDifficult = () => {
   if (state.values.currentTime === 45) {
     increaseVelocity();
   } else if (state.values.currentTime === 26) {
-    stopSound("background")
-    playSound("ralph`s laugh", 1)
+    stopSound("background");
+    playSound("ralph`s laugh", 1);
   } else if (state.values.currentTime === 20) {
     increaseVelocity();
   }
