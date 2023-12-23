@@ -10,7 +10,7 @@ const state = {
     gameVelocity: 1000,
     hitPosition: 0,
     result: 0,
-    currentTime: 30,
+    currentTime: 60,
     lifeTotal: 3,
   },
   actions: {
