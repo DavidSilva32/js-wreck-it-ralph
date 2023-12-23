@@ -1,4 +1,3 @@
 (function() {
-  // createPanelElements(3, 3);
-  initialize()
+  createPanelElements(3, 3);
 })();
